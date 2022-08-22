@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html　 lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        alert('JsTop');
+        //windowはブラウザがもってるオブジェクト
+        //イベントハンドラのonloadにより,html読み込み後にfunctionをよぶ
+        window.onload = function() {
+            alert('Jsのonload部分');
+        //documentがもってるメソッドを実行し、idを指定して取得→bodyで定義する
+            document.getElementById('dev01');
+        //id="dev01"のアドレスを取得しaaaにいれる
+            var aaa = document.getElementById('dev01');
+        //aaaを書き換える
+            aaa.innerText = 'めおめお';
+        }
+        //普通のfunction
+        function test() {
+            //valueで入力値を取得しalert表示
+            alert(textarea.value);
+            //id="dev01"のアドレスを取得しelmにいれる
+            var elm = document.getElementById('dev01');
+            //spanでcssを囲うことで文字色変更でき、elmの値を書き換える
+            elm.innerHTML = 'test <span style= "color: #0000ff;">ボタンを押しましたね'
+            //styleオブジェクトはcssをすべてもってる神。styleのbackgroundを実行し背景色を変える
+            elm.style.background = '#ffcccc';
+            alert("あなたは呪われてしまった！！ボタンが押せなくなった！")
+            //id="test_button"のアドレスを取得しbtnにいれる
+            var btn = document.getElementById('test_button');
+            test_button.innerText = "xxx"
+            //btnオブジェクトの中のdisabledをtrueにしボタンをおせなくする
+            //すべての項目を入力しないと送信ボタンを押せなくするときなどに使う
+            btn.disabled = true;
+        }
+    </script>
+    <title>DOM</title>
+</head>
+<body>
+    ここはBodyです
+    <div id="dev01">めお</div>
+    <textarea id="textarea"></textarea>
+    <!--ボタンの設置、idを割り振ることで要素をまるごと取得できる-->
+    <button id="test_button" onclick="test()">ボタン</button>
+</body>
+</html>

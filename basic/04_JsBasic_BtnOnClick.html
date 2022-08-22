@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        //documentオブジェクトに対し、イベントドリブンとしてDOMContentLoadedを使用
+        //HTMLの読み込みが完了したら発生するイベント
+        document.addEventListener('DOMContentLoaded', () => {
+          //現在地０をいれる
+          var currentValue = 0
+          //documentがもってるメソッドを実行し、idを指定してアドレスを取得し代入→bodyで定義したやつをとってくる
+          const plusButton = document.getElementById('plus_button')
+          const minusButton = document.getElementById('minus_button')
+          const Amount = document.getElementById('amount1')
+          const Result = document.getElementById('result')
+          //ボタンに対し,clickイベントをイベントドリブンで設定
+        plusButton.addEventListener('click', () => {
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16); 
+          //現在の値currentValueに入力値を加算し
+          //currentValueは0でintなので文字列の整数を数値に変換
+            currentValue = currentValue + parseInt(amount1.value)
+          //変換した値を結果とし表示
+            Result.innerText = currentValue
+            Result.style.color = "#FFFFFF";
+            Result.style.background = randomColor;
+        })
+
+        minusButton.addEventListener('click', () => {
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            currentValue = currentValue - parseInt(amount1.value)
+            Result.innerText = currentValue
+            Result.style.color = "#FFFFFF";
+            Result.style.background = randomColor;
+        })
+        })
+
+    </script>
+    <title>DOM</title>
+</head>
+<body>
+    <!-- labelタグでフォームを追加-->
+  <label for="amount">数値</label>
+  <!-- inputで型と属性を指定し入力値をとってくる-->
+  <input type="number" name="amount" id="amount1">
+  <button id="plus_button">+</button>
+  <button id="minus_button">-</button>
+
+<p>結果</p>
+<!-- 結果も識別したいのでidを定義-->
+<p id="result">0</p>
+</body>
+</html>

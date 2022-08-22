@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        alert('JsTop');
+        window.onload = function() {
+            alert('Jsのonload部分');
+        //idを指定して取得→bodyで定義する
+            document.getElementById('dev01');
+        //id="dev01"のアドレスを取得しaaaにいれる
+            var aaa = document.getElementById('dev01');
+        //aaaを書き換える
+            aaa.innerText = 'ここはdivですううううううううう';
+        }
+    </script>
+    <title>ここはタイトルです</title>
+</head>
+<body>
+    ここはBodyです
+    <div id="dev01">ここはdivです</div>
+</body>
+</html>
